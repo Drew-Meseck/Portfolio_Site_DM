@@ -1,0 +1,28 @@
+
+
+How to set up a basic flask server (powershell):
+
+1) Create Virtual Environment
+python3 -m venv venv 
+
+2) Install flask:
+pip3 install flask
+
+3) Minimum server.py
+/////
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
+/////
+
+4)Configure flask
+$env:FLASK_APP = "server.py"
+$env:FLASK_ENV = "development"
+
+5) Run Application
+flask Run
+
